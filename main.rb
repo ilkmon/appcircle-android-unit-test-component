@@ -49,7 +49,7 @@ end
 
 gradle_task = ""
 ac_variants.split(',').each { 
-    | variant | gradle_task << " :#{ac_module}:test#{variant}UnitTest"
+    | variant | gradle_task << " :#{ac_module}:test#{variant.capitalize}UnitTest"
 }
 
 run_command("cd #{gradlew_folder_path} && chmod +x ./gradlew && ./gradlew#{gradle_task}", true)
