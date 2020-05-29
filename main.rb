@@ -15,6 +15,11 @@ ac_project_path = get_env_variable("AC_PROJECT_PATH") || "."
 ac_module = get_env_variable("AC_MODULE") || abort('Missing module.')
 ac_output_folder = get_env_variable("AC_OUTPUT_DIR") || abort('Missing output folder.')
 
+def capitalize_first_char(str) 
+    str[0] = str[0].capitalize
+    return str
+end
+
 $exit_status_code = 0
 def run_command(command, skip_abort)
     puts "@[command] #{command}"
@@ -48,8 +53,8 @@ else
 end
 
 gradle_task = ""
-ac_variants.split(',').each { 
-    | variant | gradle_task << " :#{ac_module}:test#{variant.capitalize}UnitTest"
+ac_variants.split('|').each { 
+    | variant | gradle_task << " :#{ac_module}:test#{capitalize_first_char(variant)}UnitTest"
 }
 
 run_command("cd #{gradlew_folder_path} && chmod +x ./gradlew && ./gradlew#{gradle_task}", true)
