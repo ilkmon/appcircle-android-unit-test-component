@@ -69,4 +69,7 @@ puts "Copying reports to the output directory"
 puts "#{build_folder_path}/reports/tests => $AC_OUTPUT_DIR/tests"
 run_command("cp -R #{build_folder_path}/reports/tests #{ac_output_folder}/tests", false)
 
+File.open(ENV['AC_ENV_FILE_PATH'], 'a') { |f|
+    f.puts "AC_TEST_RESULT_PATH= #{ac_output_folder}/test-results"
+}
 exit $exit_status_code
