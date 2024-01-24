@@ -28,7 +28,7 @@ inputs:
   helpText:
 - key: "AC_ENABLE_JACOCO_COVERAGE_REPORTS"
   defaultValue: "false"
-  isRequired: true
+  isRequired: false
   editorType: select
   options: "false,true"
   title: Create JaCoCo XML coverage reports
