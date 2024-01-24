@@ -14,8 +14,7 @@ temp_folder = get_env_variable("AC_TEMP_DIR") || abort('Missing AC_TEMP_DIR vari
 ac_project_path = get_env_variable("AC_PROJECT_PATH") || "."
 ac_module = get_env_variable("AC_MODULE") || abort('Missing module.')
 ac_output_folder = get_env_variable("AC_OUTPUT_DIR") || abort('Missing output folder.')
-ac_coverage_report_enabled =  get_env_variable("AC_ENABLE_JACOCO_COVERAGE_REPORTS") || "false")
-
+ac_coverage_report_enabled = get_env_variable("AC_ENABLE_JACOCO_COVERAGE_REPORTS") || "false"
 
 def capitalize_first_char(str) 
     str[0] = str[0].capitalize
