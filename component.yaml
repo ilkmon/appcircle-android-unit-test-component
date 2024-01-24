@@ -26,6 +26,14 @@ inputs:
   title: Variants
   description: "Specifies build variants. For example : -configuration DEBUG"
   helpText:
+- key: "AC_ENABLE_JACOCO_COVERAGE_REPORTS"
+  defaultValue: "false"
+  isRequired: true
+  editorType: select
+  options: "false,true"
+  title: Create JaCoCo XML coverage reports
+  description: "If true, creates JaCoCo Unit Test Coverage Report"
+  helpText:
 outputs:
 - key: "AC_TEST_RESULT_PATH"
   title: Output Path
